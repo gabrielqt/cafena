@@ -1,0 +1,303 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+
+:root{
+    --main-color:#d3ad7f;
+    --black:#010103;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: 0.2s linear; 
+}
+
+body{
+    background-color: var(--black);
+    
+}
+
+.logo{
+    margin: 0.1rem;
+}
+
+.shop{
+    font-size: 1.2rem;
+}
+
+.fill::before{
+    content: '\F23D';
+}
+
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 90;
+    background-color: var(--black);
+}
+
+header div{
+    margin: auto 1rem;
+}
+
+.links a{
+    margin: auto 3vw;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.links a:hover{
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.container{
+    position: absolute;
+}
+
+.home{
+    width: 100%;
+    height: 100vh;
+    background: url(/imgs/home-img.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.home-box{
+    position: relative;
+    top: 32vh;
+    left: 15vw;
+    width: 30vw;
+}
+
+.title{
+    font-size: 3rem;
+}
+
+.home-box p{
+    font-weight: 100;
+    line-height: 1.8rem;
+}
+
+button{
+    margin-top: 1rem;
+    background-color: var(--main-color);
+    padding: 0.5rem;
+    border: none;
+    font-weight: bold;
+}
+
+button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.about{
+    position: relative;
+    top: 25vh;
+
+}
+
+.about-box h1{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-box span{
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.about-main{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #36454F;
+
+    & button{
+        padding: 0.4rem;
+        margin: 1rem;
+        margin-left: 2rem;
+        
+    }
+}
+
+.about-main img{
+    width: 55%;
+}
+
+.about-main p{
+    color: white;
+    line-height: 1.8rem;
+    font-weight: 100;
+    padding: 2rem;
+}
+
+.about-main h1{
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 0.5rem;
+
+    & span{
+        font-weight: 500;
+    }
+}
+
+
+.elixir{
+    position: relative;
+    top: 50vh;
+
+    & h1{
+        width: 50%;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0 auto;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        animation: elixir 5s infinite;
+    }
+}
+
+@keyframes elixir{
+    0%{
+        color: var(--main-color);
+    }
+
+    50%{
+        color: #fff;
+    }
+
+    100%{
+        color: var(--main-color);
+    }
+}
+
+
+.elixir-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1vw;
+    max-width: 63vw;
+    margin: 0 auto;
+
+}
+
+.card{
+    background-color: transparent;
+    height: 40vh;
+    width: 20vw;
+    border: 2px solid #C0C0C0;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+
+    & img{
+        border: 2px solid var(--main-color);
+        border-radius: 50%;
+        margin-bottom: 0.3rem;
+    }
+
+    & .old-price{
+        opacity: 0.7;
+        text-decoration: line-through;
+        font-size: 0.9rem;
+    }
+
+    & .current-price{
+        font-weight: bold;
+    }
+
+    & button{
+        padding: 0.4rem;
+    }
+
+}
+
+.card:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+
+.modal{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 400%;
+    width: 100%;
+    z-index: 99;
+}
+
+.modal-content{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    background-color: grey;
+    border: 2px solid var(--main-color);
+    width: 30vw;
+    height: 90vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+.coffe-name{
+    font-weight: 100;
+}
+
+.modal-content{
+    & img{
+        border-radius: 50%;
+        border: 2px solid var(--main-color);
+    }
+    & p{
+        font-size: 0.9rem;
+        font-weight: 100;
+        line-height: 1.8rem;
+        padding: 2rem;
+        text-align: center;
+    }
+    & button{
+        margin: 0rem;
+    }
+    & h2{
+        position: relative;
+        top: 1rem;
+    }
+}
+
+.description{
+    display: none;
+}
